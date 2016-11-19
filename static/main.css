@@ -1,0 +1,27 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+ul.row li:first-child {
+	text-align: left;
+	padding-left: 25px;
+}
+.head {
+	font-weight: bold;
+}
+.nopd {
+	padding-left: 0;
+}
+.search-input {
+	margin: 0.5em 0 1em 0;
+}
+.for-sort {
+	color: #337ab7;
+	cursor: pointer;
+}
+.car-name {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+.car-price {
+	color: red;
+}

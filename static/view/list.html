@@ -1,0 +1,24 @@
+<ol class="breadcrumb">
+  <li><a href="#/">All cars</a></li>
+</ol>
+<div>
+  <input type="text" ng-model="main.search" class="form-control search-input" placeholder="find car..." />
+</div>
+<ul class="row head list-unstyled text-center">
+  <li class="col-xs-12 col-sm-2"></li>
+  <li class="col-xs-12 col-sm-2 for-sort" ng-click="main.sort('name')">Car</li>
+  <li class="col-xs-12 col-sm-3">Description</li>
+  <li class="col-xs-12 col-sm-1 for-sor" ng-click="main.sort('year')">Year</li>
+  <li class="col-xs-12 col-sm-2 for-sort" ng-click="main.sort('price')">Price</li>
+  <li class="col-xs-12 col-sm-1">Discount</li>
+  <li class="col-xs-1"></li>
+</ul>
+<ul class="row list-unstyled text-center" ng-repeat="c in main.cars | orderBy:main.s.type:main.s.order | filter: {name:main.search}">
+  <li class="col-xs-12 col-sm-2"><a href="#/order/{{c.id}}"><img ng-src="{{c.pic}}" class="img-thumbnail" /></a></li>
+  <li class="col-xs-12 col-sm-2 car-name" ng-bind="c.name"></li>
+  <li class="col-xs-12 col-sm-3">{{::c.description | limitTo:50}}...</li>
+  <li class="col-xs-12 col-sm-1" ng-bind="c.year"></li>
+  <li class="col-xs-12 col-sm-2" ng-bind="c.price | currency:'USD$'"></li>
+  <li class="col-xs-12 col-sm-1">{{::c.discount | number}}%</li>
+  <li class="col-xs-1"><a href="#/order/{{c.id}}" class="btn btn-danger">Buy</a></li>
+</ul>

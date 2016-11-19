@@ -1,0 +1,74 @@
+<ol class="breadcrumb">
+	<li><a href="#/">All cars</a></li>
+	<li ng-repeat="p in main.pag"><span ng-bind="p.val+1"></span></li>
+</ol>
+<form name="buyform" ng-submit="main.processForm()">
+	<h3>Buy a {{main.car.name}}</h3>
+	<div class="form-group clearfix">
+		<div class="col-xs-6 col-sm-3 nopd">
+			<img ng-src="{{main.car.pic}}" class="img-thumbnail" />
+		</div>
+		<div class="col-xs-6 col-sm-9" ng-bind="main.car.description"></div>
+	</div>
+	<div class="form-group clearfix">
+		<div class="col-xs-12 col-sm-3 head">
+			Year
+		</div>
+		<div class="col-xs-12 col-sm-9" ng-bind="main.car.year"></div>
+	</div>
+	<div class="form-group clearfix">
+		<div class="col-xs-12 col-sm-3 head">
+			Price
+		</div>
+		<div class="col-xs-12 col-sm-9 car-name car-price" ng-bind="main.car.price | currency:'USD$'"></div>
+	</div>
+	<div class="form-group clearfix">
+		<div class="col-xs-12 col-sm-3 head">
+			Discount
+		</div>
+		<div class="col-xs-12 col-sm-9">{{::main.car.discount | number}}%</div>
+	</div>
+
+	<h3>Order information</h3>
+	<div class="form-group clearfix">
+		<div class="col-xs-12 col-sm-3 head">
+			Full Name
+		</div>
+		<div class="col-xs-12 col-sm-9">
+			<input type="text" ng-model="main.user.name" class="form-control" ng-pattern="/^[a-zA-z]+$/" required />
+		</div>
+	</div>
+	<div class="form-group clearfix">
+		<div class="col-xs-12 col-sm-3 head">
+			Address
+		</div>
+		<div class="col-xs-12 col-sm-9">
+			<input type="text" ng-model="main.user.address" class="form-control" required />
+		</div>
+	</div>
+	<div class="form-group clearfix">
+		<div class="col-xs-12 col-sm-3 head">
+			Email
+		</div>
+		<div class="col-xs-12 col-sm-9">
+			<input type="email" ng-model="main.user.email" class="form-control" required />
+		</div>
+	</div>
+	<div class="form-group clearfix">
+		<div class="col-xs-12 col-sm-3 head">
+			Phone number
+		</div>
+		<div class="col-xs-12 col-sm-9">
+			<input type="text" ng-model="main.user.phone" class="form-control" ui-mask="999-999-9999" required />
+		</div>
+	</div>
+	<div class="form-group clearfix">
+		<div class="col-xs-12 col-sm-3 head">
+			Credit card number
+		</div>
+		<div class="col-xs-12 col-sm-9">
+			<input type="text" ng-model="main.user.card" class="form-control" ui-mask="9999 9999 9999 9999" required />
+		</div>
+	</div>
+	<a class="btn btn-primary" href="#/confirm/{{main.car.id}}" ng-disabled="buyform.$invalid">Confirm purchase</a>
+</form>
