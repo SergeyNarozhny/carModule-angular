@@ -6,7 +6,7 @@ import uiMask from 'angular-ui-mask';
 import userFactory from './car.user.factory';
 
 /**
- * Подключение модуля, роутера, сервиса и контроллера
+ * Main app, router, service and ctrl definition
  */
 angular
 	.module('car', [ngRoute, uiMask])

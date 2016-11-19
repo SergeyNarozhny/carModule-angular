@@ -1,12 +1,12 @@
 import { model } from './model';
 
 /**
- * @class [mainController] Класс основного контроллера приложения
- * @ngInject [$scope, $routeParams] параметры, полученные через DI
+ * @class [mainController] Main ctrl class
+ * @ngInject [$scope, $routeParams] params through DI
  */
 export default class mainController {
 	/**
-	 * @constructor Конструктор класса
+	 * @constructor Class constructor function
 	 * @param  $scope
 	 * @param  $routeParams
 	 */
@@ -24,7 +24,7 @@ export default class mainController {
 		};
 
 
-		// Вешаем обработчик события на успешный переход
+		// Callback on successful route change
 		$scope.$on('$routeChangeSuccess', () => this.prepareParams($routeParams));
 
 		// @todo $scope.$on('$routeChangeError', ...

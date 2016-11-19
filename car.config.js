@@ -1,5 +1,5 @@
 /**
- * Конфигурация маршрутизатора приложения
+ * Routes configuration
  * @ngInject [$routeProvider]
  */
 function routing($routeProvider) {
