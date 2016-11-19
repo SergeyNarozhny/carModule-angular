@@ -15,14 +15,12 @@ export default class mainController {
 			type: 'name',
 			order: false
 		};
-		//this.model = model;
 		this.cars = model;
 		this.user = userFactory.getData();
 		this.sort = function(type) {
 			this.s.type = type;
 			this.s.order = !this.s.order;
 		};
-
 
 		// Callback on successful route change
 		$scope.$on('$routeChangeSuccess', () => this.prepareParams($routeParams));
