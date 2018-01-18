@@ -2,24 +2,26 @@
  * Routes configuration
  * @ngInject [$routeProvider]
  */
-function routing($routeProvider) {
+function routing($routeProvider, $locationProvider) {
 	$routeProvider
 		.when('/', {
-			templateUrl: './static/view/list.html',
+			templateUrl: '/static/view/list.html',
 			controller: 'main',
 			controllerAs: 'main'
 		})
 		.when('/order/:sid', {
-			templateUrl: './static/view/order.html',
+			templateUrl: '/static/view/order.html',
 			controller: 'main',
 			controllerAs: 'main'
 		})
 		.when('/confirm/:sid', {
-			templateUrl: './static/view/confirm.html',
+			templateUrl: '/static/view/confirm.html',
 			controller: 'main',
 			controllerAs: 'main'
 		});
+
+	$locationProvider.hashPrefix('');
 }
-routing.$inject = ['$routeProvider'];
+routing.$inject = ['$routeProvider', '$locationProvider'];
 
 export default routing;

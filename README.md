@@ -2,4 +2,5 @@
 
 ## Shipped in modules with es6, packed by webpack
 
-Working example is here: http://ec2-35-162-151-181.us-west-2.compute.amazonaws.com:8800/
+Working example is here: http://c9z.ru:8810/
+

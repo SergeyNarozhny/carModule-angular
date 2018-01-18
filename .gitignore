@@ -1,4 +1,6 @@
 bootstrap*.css
 node_modules/
 bundle.js
+webpack.config.js
+
 
